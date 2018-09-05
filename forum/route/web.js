@@ -2,7 +2,7 @@
 const mysql=require('mysql');
 const express=require('express');
 const myfun=require('../my_modules/myfun.js');
-const db=mysql.createPool({host:'localhost',user:'root',password:'adgjl193726845',database:'schema1'});
+const db=mysql.createPool({host:'localhost',user:'root',password:'root',database:'schema1'});
 
 var router=express.Router();
 //渲染主页

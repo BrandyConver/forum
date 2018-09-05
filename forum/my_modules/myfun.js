@@ -1,7 +1,7 @@
 // 公有模块 md5 数据库
 const crypto=require('crypto');
 const mysql=require('mysql');
-const pool=mysql.createPool({host:'localhost',user:'root',password:'adgjl193726845',database:'schema1'});
+const pool=mysql.createPool({host:'localhost',user:'root',password:'root',database:'schema1'});
 module.exports={
 	sign(str){
 		var key='keys';

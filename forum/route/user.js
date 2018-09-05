@@ -3,7 +3,7 @@ const mysql=require('mysql');
 const crypto=require('crypto');
 const express=require('express');
 const myfun=require('../my_modules/myfun.js');
-const pool=mysql.createPool({host:'localhost',user:'root',password:'adgjl193726845',database:'schema1'});
+const pool=mysql.createPool({host:'localhost',user:'root',password:'root',database:'schema1'});
 var router=express.Router();
 
 
