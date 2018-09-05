@@ -1,0 +1,44 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <title>登录</title>
+      <link type='image/png' rel='icon' href='image/title.png'>
+      <script src='js/ajax.js'></script>
+      <script type="text/javascript">
+        window.onload=function(){
+          var oname=document.getElementById('username');
+          var opass=document.getElementById('pass');
+
+          document.getElementById('button').onclick=function(){
+            ajax({
+              url:'/login',
+              data:{username:oname.value,pass:opass.value},
+              success:function(str){
+                var result=eval('('+str+')');
+                alert(result.msg);
+              },
+              error:function(str){
+                alert('错误'+str);
+              }
+            });
+          };
+        };
+      </script>
+      <link rel='stylesheet' type="text/css" href='css/login_and_reg.css'>
+
+    </head>
+    
+    <body>
+
+        <div class='div1'>
+          <h3>登录</h3>
+          <laber for='username'>账号:</laber>&nbsp;<input type='text' name='username' placeholder="在此输入账号" id='username'><br/>
+          <laber for='pass'>密码:</laber>&nbsp;<input type='password' name='pass' placeholder="在此输入密码" id='pass'><br/>
+          <input type='submit' value='登录' id='button1'><br/>
+          <a style='font-size:14px;text-decoration:none;color:#15B;' href='reg.html'>还没有账号，注册>></a>
+        </div>
+
+
+    </body>
+</html>

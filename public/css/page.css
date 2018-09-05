@@ -1,0 +1,67 @@
+#main{
+  position: relative;
+  margin:20px 70px;
+  border:1px solid #999;
+  border-radius:2px;
+}
+#mainbody{
+	width:70%;
+	border-right: 1px solid black;
+	padding:20px;
+}
+.likes *{
+	vertical-align: sub;
+	height:25px;
+}
+
+#commenting{
+	margin: 5px;
+	padding: 5px;
+	text-align: center;
+	overflow: hidden;
+	/*border-bottom:1px solid black;*/
+}
+#commenting textarea{
+	font-size:15px;
+	padding:0px;
+	width:100%;
+	border-radius: 5px;
+	background-color: #EEE;
+	border:0px solid #FFF;
+	overflow: hidden;
+}
+#commenting textarea:focus{
+	background-color: #FFF;
+	border:1px solid #EEF;
+}
+#commenting input[type='button']{
+	float:right;
+}
+
+.floor{
+	float:right;
+}
+#comments{
+	margin:5px;
+}
+.comment{
+	background-color:#EEE;
+	padding:2px;
+	border-bottom:1px dotted black;
+	
+}
+#rec{
+	position:absolute;
+	right:2%;
+	top:5%;
+	width:20%;
+	height:100px;
+	
+}
+.rec_title{
+	margin-bottom:5px;
+	overflow: hidden;
+	width:100%;
+	height:3rem;
+	background-color:#EEE;
+}

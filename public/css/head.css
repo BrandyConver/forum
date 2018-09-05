@@ -1,0 +1,25 @@
+/*主页及内容页css*/
+a{
+  text-decoration: none;
+  color:black;
+}
+#head{
+  height:30px;
+  margin:5px 70px;
+  position:relative;
+  background-color: #DDF;
+  border-radius: 5px;
+}
+#home{
+  width:40px;
+  height:30px;
+  position:relative;
+  top:5px;
+  left:30px;
+}
+#user{
+  position:absolute;
+  right:30px;
+  top:5px;
+
+}

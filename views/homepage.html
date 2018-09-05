@@ -1,0 +1,48 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>我的主页</title>
+    <link type='image/png' rel='icon' href='image/title.png'>
+    <script src="js/ajax.js" "></script>
+    <link rel='stylesheet' type='text/css' href='css/head.css' >
+    <link rel='stylesheet' type='text/css' href='css/homepage.css' >
+    <style>
+    </style>
+    <script type="text/javascript">
+      
+    </script>
+  </head>
+  
+  <body>
+    <%-include('head.html') %>
+
+    <div id='main'>
+      <div class="left">
+        <ul>
+          <li><a href=''>分类导航1</a></li>
+          <li><a href=''>分类导航2</a></li>
+          <li><a href=''>分类导航3</a></li>
+          <li><a href=''>分类导航4</a></li>
+        </ul>
+      </div>
+
+      <div class="mainbody">
+        <div id='orderdiv'>
+          <ul id='orderul'>
+          <li><a href='javascript:'>最新发布</a></li>
+          <li><a href='javascript:'>最多评论</a></li>
+          <li><a href='javascript:'>最多点赞</a></li>
+          </ul>
+          <div class="newpost"><a href="new_article" target="_blank"><!--img src="image/icon/plus.png" alt=""--></img>发布内容</a></div>
+        </div>
+        
+        <div >
+          <% for(var i=0;i< articles.length;i++){ %>
+          <div class='article'><h3 class='title'><a href="/p?id=<%=articles[i].id %>"><%=articles[i].title%></a></h3><p class='summary'><%=articles[i].content.substr(0,50)%>……</p><a class='author' href=""><%=articles[i].author%></a>&nbsp;&nbsp;&nbsp;<span class='post_time'><%=articles[i].post_time%></span></div>
+          <% } %>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

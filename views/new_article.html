@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html >
+<head>
+	<meta charset="UTF-8">
+	<title>发布内容</title>
+	<link rel="icon" href="/img/title.png" type='image/png'></link>
+	<link rel='stylesheet' href='/css/head.css' type='text/css'>
+	<link rel='stylesheet' href='/css/new_article.css' type='text/css'>
+	<link rel='icon' type='image/png' href='/image/title.png'>
+	<script src='/js/ajax.js'></script>
+	<script>
+		function submit(){
+			var content=document.getElementsByName('content')[0].value;
+			var title=document.getElementsByName('title')[0].value;
+			ajax({url:'http://127.0.0.1:8080/p/act',
+				method:'post',
+				data:{title,content,act:'publish'},
+				cb(text){
+					confirm(text);
+					location.reload();
+				}
+			});
+		}
+
+	</script>
+</head>
+<body>
+	<%-include('head.html') %>
+	<div id='maindiv'><div class='h3'><h3>发布新内容</h3></div>
+		<form ><div>标题:<input id='title' name='title' required='required' type="text" placeholder="请在此输入标题"  ></div><br>
+			<div ><div class='float'>正文</div><textarea style='width:60%;' name='content' required='required' rows='20'  placeholder="请在此输入正文"></textarea></div></form>
+			<div id='submit_div'><input id='button' onclick='submit()' type="button" value='提交'></div>
+	</div>
+</body>
+</html>

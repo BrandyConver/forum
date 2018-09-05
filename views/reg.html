@@ -1,0 +1,25 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>注册</title>
+    <link type='image/png' rel='icon' href='/image/title.png'>
+    <link rel='stylesheet' type="text/css" href='/css/login_and_reg.css'>
+  </head>
+  
+  <body>
+      <div class='div1'>
+        <h3>注册</h3>
+        <form action="http://127.0.0.1:8080/user/reg" method="post">
+          <% if(typeof msg!='undefined') { %>
+          <p>*<%=msg %></p>
+          <% } %>
+          <label for='username'>账&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;号:</label>&nbsp;<input type='text' required="required" name='username' placeholder="在此输入账号" id='username'><br/>
+          <label for='pass1'>密&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;码:</label>&nbsp;<input type='password' required="required" name='password1' placeholder="在此输入密码" id='pass1'><br/>
+          <label for='pass2'>重复密码:</label><input type='password' required="required" name='password2' placeholder="在此输入密码" id='pass2'><br/>
+          <input type='submit' value='注册' id='button1'><br/>
+          <a class='skip' href='login'>已有账号，登陆>></a>
+        </form>
+      </div>
+  </body>
+</html>

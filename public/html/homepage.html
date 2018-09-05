@@ -1,0 +1,103 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>我的主页</title>
+    <link type='image/png' rel='icon' href='../image/title.png'>
+    <script type="text/javascript">
+    </script>
+
+    <style>
+
+    li{
+      list-style-type: none;
+    }
+    a{
+      text-decoration: none;
+      color:black;
+    }
+    
+    #head{
+      height:30px;
+      width: 90%;
+      margin:5px auto;
+      position:relative;
+      background-color: #DDF;
+      border-radius: 5px;
+    }
+    #home{
+      width:40px;
+      height:30px;
+      position:relative;
+      top:5px;
+      left:40px;
+    }
+    #user{
+      position:absolute;
+      right:20px;
+      top:5px;
+
+    }
+    #main{
+      margin:20px 70px ;
+      padding:10px;
+      border:1px solid #999;
+      border-radius:10px;
+    }
+
+    #guide{
+     
+    }
+    #guide>li{
+      position:relative;
+      display: inline-block;
+      font-weight: bold;
+      top:2px;
+      width:80px;
+      text-align:center;   
+      background-color: #EEE;
+    }
+    #guide>li:hover{
+      background-color: #FFF;
+    }
+    .select{
+      z-index: 2;
+      background-color: red;
+      
+    }
+    .article{
+      padding: 5px;
+      border-radius: 10px;
+      border: solid 0px #FFF;
+      background-color: #EEF;
+      margin-top: 5px;
+    }
+    .summary{
+      color:#662;
+    }
+    </style>
+  </head>
+  
+  <body>
+    <div id='head'>
+      <div id='home'><a href="">首页</a></div>
+      <div id='user'><a class='user' href="">登陆</a>&nbsp;&nbsp;&nbsp;<a href="">注册</a></div>
+    </div>
+
+    <div id='main'>
+     
+        <ul id='guide'>
+        <li class='select'><a href='javascript:'>导航栏</a></li>
+        <li><a href='javascript:'>导航栏</a></li>
+        <li><a href='javascript:'>导航栏</a></li>
+        <li><a href='javascript:'>导航栏</a></li>
+        </ul>
+      <% for(let i=0;i< articles.length;i++){ %>      
+      <div class='article'><h3 class='title'><a href=""><%articles[i].title%></a></h3><p class='summary'><%=articles.content.substr(0,50)%</p><a class='author' href=""><%articles[i].author%></a>&nbsp;&nbsp;&nbsp;<span class='post_time'><%articles[i].post_time%></span></div>
+      <% } %>
+
+
+
+    </div>
+  </body>
+</html>

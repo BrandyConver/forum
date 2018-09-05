@@ -1,0 +1,28 @@
+网站目录
+/ 主页
+/user/login 登陆页
+/user/reg 注册页
+/user/xxx 个人信息页  待添加
+/p?id=xxx 文章内容页
+/new_article 发表
+/admin 管理员功能  待添加
+
+带添加、完善功能
+用户登陆状态记录
+主页导航栏，分页
+内容页推荐
+
+
+文件目录
+server.js
+node_modules/ 模块
+route/ 路由
+——web.js
+——user.js
+upload/ 用户上传头像文件
+views/ 模板
+public/ 静态资源
+——js/ js文件
+——css/ css文件
+——image/ 图片
+————icon/ 图标

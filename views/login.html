@@ -1,0 +1,24 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <title>登录</title>
+      <link type='image/png' rel='icon' href='/image/title.png'>
+      <link rel='stylesheet' type="text/css" href='/css/login_and_reg.css'>
+    </head>
+    
+    <body>
+      <div class='div1'>
+        <h3>登录</h3>
+        <form action="http://127.0.0.1:8080/user/login" method="post">
+          <% if(typeof msg!='undefined') { %>
+          <p>*<%=msg %></p>
+          <% } %>
+          <label for='username'>账号:</label>&nbsp;<input type='text' autofocus="autofocus" required="required" name='username' placeholder="在此输入账号" id='username'><br/>
+          <label for='pass'>密码:</label>&nbsp;<input type='password' required="required" name='password' placeholder="在此输入密码" id='pass'><br/>
+          <input type='submit' value='登录' id='button1'><br/>
+          <a class='skip' href='reg'>还没有账号，注册>></a>
+        </form>
+      </div>
+    </body>
+</html>

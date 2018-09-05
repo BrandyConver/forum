@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title><%=article.title%></title>
+  <link type='image/png' rel='icon' href='/image/title.png'>
+  <script src='/js/ajax.js'></script>
+  <script type="text/javascript">
+    window.onload=function(){
+      var likes=document.getElementById('likes');
+      var img=likes.previousSibling.firstChild;
+      var query={};
+      location.search.split('?')[1].split('&').forEach(function(value,index,arr){ 
+        var key=value.split('=')[0]
+        query[key]=value.split('=')[1];
+      });
+      likes.previousSibling.addEventListener('click',function(){       
+        ajax({url:'p/act',method:'post',data:{article_id:query.id,act:'like'},cb(restext){likes.innerHTML++;img.setAttribute('src',"../image/icon/like2.png");}});
+        
+        likes.previousSibling.removeEventListener('click',arguments.callee,false)
+      },false);
+      var comment_button=document.getElementById('comment_button');
+      var textarea=document.getElementById('textarea');
+      comment_button.addEventListener('click',function(){
+        ajax({url:'p/act',method:'post',data:{article_id:query.id,act:'comment',content:textarea.value},cb(restext){alert(restext);}});
+      });      
+    }   
+  </script>
+  <link rel='stylesheet' type='text/css' href='/css/head.css' >
+  <link rel='stylesheet' type='text/css' href='/css/page.css'>
+
+
+</head>
+<body>
+	</head>
+  
+  <body>
+    <%-include('head.html')%>
+    <div id='main'>
+      <div id='mainbody'>
+        <h3><%=article.title%></h3>
+        <span><%=article.author%></span>&nbsp;&nbsp;&nbsp;<span><%=article.post_time%></span>
+        <p><%-article.content%></p>
+
+        <div class='likes'>
+          <a href="javascript:void(0)" ><img src="../image/icon/like1.png"></a><span id='likes'><%=article.likes%></span>
+        </div>     
+      
+
+        <div id='commenting'>
+            <textarea  rows='3' id='textarea' placeholder="发表你的评论"></textarea><br>
+            <input type="button" value='评论' id='comment_button' >
+        </div>
+
+      	<div id="comments">
+
+          <%if(typeof comments!='undefined') {%>
+          <% for(var i=0; i< comments.length; i++){ %>
+            <div class="comment"><p><span><%=comments[i].username%></span>&nbsp;&nbsp;&nbsp;<span><%=comments[i].time%></span><span class='floor'>#<%=i%>楼</span></p>
+              <p><%=comments[i].content%></p>
+            </div>
+          <% }}else{ %>
+            <div class="comment">暂无评论</div>
+            aaaaaaaa
+          <% }%>
+          
+        </div>
+      </div>
+
+
+      <div id="rec">
+        <p>最新文章</p>
+        <div class='rec_title'><a href="">样例，此处标题1</a></div>
+        <div class='rec_title'><a href="">样例，此处标题2</a></div>
+        <div class='rec_title'><a href="">样例，此处标题3</a></div>
+      </div>
+
+    </div>
+</body>
+</html>
