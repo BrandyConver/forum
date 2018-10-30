@@ -28,7 +28,7 @@ router.get('/p',(req,res)=>{
 				myfun.query(`SELECT * FROM comments WHERE article_id=${req.query.id}`,function(comments){
 					data[0].content=data[0].content.replace(/^/gm,'<p>').replace(/$/gm,'</p>');
 					data[0].likes=data[0].likes.replace(/^0+/,'');
-					res.render('content.html',{article:data[0],user:req.session.status,user:req.session.user,comments});//登陆状态栏
+					res.render('content.html',{article:data[0], user:req.session.status, user:req.session.user, comments});//登陆状态栏
 				});
 			}
 		});
@@ -37,7 +37,7 @@ router.get('/p',(req,res)=>{
 		res.status(404).send('请求的页面不存在'+err).end();
 });
 
-//ajax点赞评论发表
+//ajax点赞、评论、发表
 router.post('/p/act',(req,res)=>{
 	var act=req.body.act;
 	var username=req.session.user;
@@ -65,11 +65,11 @@ router.post('/p/act',(req,res)=>{
 			}
 			var now=new Date();
 			var time=now.getFullYear()+'-'+(now.getMonth()+1)+'-'+now.getDate()+' '+now.getHours()+':'+now.getMinutes();
-			myfun.query(`INSERT INTO comments (username,article_id,content,time) VALUE ('${username}','${req.body.article_id}','${req.body.content}','${time}')`,function(result){res.status(200).send('评论成功').end();});
+			 (`INSERT INTO comments (username,article_id,content,time) VALUE ('${username}','${req.body.article_id}','${req.body.content}','${time}')`,function(result){res.status(200).send('评论成功').end();});
 			break;
 		case 'publish':
-			var now=new Date();
-			var post_time=now.getFullYear()+'-'+(now.getMonth()+1)+'-'+now.getDate()+' '+now.getHours()+':'+now.getMinutes();
+			var nowdata=myfun.getData();
+			var post_time=nowdata.data+nowdata.time;
 			var title=req.body.title;
 			var content=req.body.content; 
 			if(title==''||content==''){

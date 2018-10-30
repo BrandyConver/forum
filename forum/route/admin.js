@@ -1,4 +1,4 @@
-// 管理员模块
+// 管理员模块 未完成
 const express=require('express');
 var router=express.Router();
 router.get('/admin/',(req,res)=>{
