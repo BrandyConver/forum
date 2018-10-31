@@ -11,7 +11,7 @@
 
 文件目录
 server.js 主文件
-node_modules/ 模块
+node_modules/ npm模块
 route/ 路由
 ——web.js
 ——user.js
